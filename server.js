@@ -36,7 +36,7 @@ app.use(express.static('./views/styles'));
 
 app.get('/', (req, res) => {
     const title = 'Home';
-    res.send('Hello world!!!!! No war!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');//render(createPath('index'), {title} );
+    res.render(createPath('index'), {title} );
 });
 
 app.use(postRoutes);
