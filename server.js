@@ -26,30 +26,30 @@ app.listen(process.env.PORT, (error) => {
     error ? console.log(error) : console.log(`listening port ${process.env.PORT}`);
 });
 
-// app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
-// app.use(express.urlencoded( { extended: false }));
+app.use(express.urlencoded( { extended: false }));
 
 app.use(express.static('./views/styles'));
 
 app.get('/', (req, res) => {
     const title = 'Home';
-    res.send('Hello world!!!!! No war');//render(createPath('index'), {title} );
+    res.send('Hello world!!!!! No war!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');//render(createPath('index'), {title} );
 });
 
-// app.use(postRoutes);
-// app.use(postApiRoutes);
-// app.use(contactRoutes);
+app.use(postRoutes);
+app.use(postApiRoutes);
+app.use(contactRoutes);
 
-// app.get('/about-us', (req, res) => {
-//     res.redirect('/contacts');
-// });
+app.get('/about-us', (req, res) => {
+    res.redirect('/contacts');
+});
 
-// app.use((req, res) => {
-//     const title = 'Error page';
-//     res
-//     .status(404)
-//     .render(createPath('error'), { title });
-// });
+app.use((req, res) => {
+    const title = 'Error page';
+    res
+    .status(404)
+    .render(createPath('error'), { title });
+});
