@@ -1,13 +1,9 @@
 const express = require('express');
 require('dotenv').config();
-//const chalk = import('chalk');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const createPath = require('./helpers/create-path');
-
-// const errorMsg = chalk.white;//.bgRedBright;
-// const successMsg = chalk.green;//.white;
 
 const postRoutes = require('./routes/post-routes');
 const postApiRoutes = require('./routes/api-post-routes');
